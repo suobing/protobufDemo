@@ -33,7 +33,7 @@ public final class ProtoTest {
      *optional int32 c=3;
      * </pre>
      *
-     * <code>optional sint32 d = 4;</code>
+     * <code>optional sint32 d = 4 [default = 20];</code>
      */
     boolean hasD();
     /**
@@ -42,7 +42,7 @@ public final class ProtoTest {
      *optional int32 c=3;
      * </pre>
      *
-     * <code>optional sint32 d = 4;</code>
+     * <code>optional sint32 d = 4 [default = 20];</code>
      */
     int getD();
 
@@ -133,7 +133,7 @@ public final class ProtoTest {
     }
     private Test() {
       a_ = 0;
-      d_ = 0;
+      d_ = 20;
       e_ = 0;
       f_ = "";
       g_ = java.util.Collections.emptyList();
@@ -298,7 +298,7 @@ public final class ProtoTest {
      *optional int32 c=3;
      * </pre>
      *
-     * <code>optional sint32 d = 4;</code>
+     * <code>optional sint32 d = 4 [default = 20];</code>
      */
     public boolean hasD() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
@@ -309,7 +309,7 @@ public final class ProtoTest {
      *optional int32 c=3;
      * </pre>
      *
-     * <code>optional sint32 d = 4;</code>
+     * <code>optional sint32 d = 4 [default = 20];</code>
      */
     public int getD() {
       return d_;
@@ -744,7 +744,7 @@ public final class ProtoTest {
         super.clear();
         a_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        d_ = 0;
+        d_ = 20;
         bitField0_ = (bitField0_ & ~0x00000002);
         e_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -957,14 +957,14 @@ public final class ProtoTest {
         return this;
       }
 
-      private int d_ ;
+      private int d_ = 20;
       /**
        * <pre>
        *optional int32 b=2;
        *optional int32 c=3;
        * </pre>
        *
-       * <code>optional sint32 d = 4;</code>
+       * <code>optional sint32 d = 4 [default = 20];</code>
        */
       public boolean hasD() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
@@ -975,7 +975,7 @@ public final class ProtoTest {
        *optional int32 c=3;
        * </pre>
        *
-       * <code>optional sint32 d = 4;</code>
+       * <code>optional sint32 d = 4 [default = 20];</code>
        */
       public int getD() {
         return d_;
@@ -986,7 +986,7 @@ public final class ProtoTest {
        *optional int32 c=3;
        * </pre>
        *
-       * <code>optional sint32 d = 4;</code>
+       * <code>optional sint32 d = 4 [default = 20];</code>
        */
       public Builder setD(int value) {
         bitField0_ |= 0x00000002;
@@ -1000,11 +1000,11 @@ public final class ProtoTest {
        *optional int32 c=3;
        * </pre>
        *
-       * <code>optional sint32 d = 4;</code>
+       * <code>optional sint32 d = 4 [default = 20];</code>
        */
       public Builder clearD() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        d_ = 0;
+        d_ = 20;
         onChanged();
         return this;
       }
@@ -1465,10 +1465,10 @@ public final class ProtoTest {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\ntest.proto\022\004demo\"c\n\004Test\022\t\n\001a\030\001 \001(\005\022\t\n" +
-      "\001d\030\004 \001(\021\022\t\n\001e\030\005 \001(\007\022\t\n\001f\030\006 \001(\t\022\t\n\001g\030\007 \003(" +
-      "\005\022\r\n\001h\030\010 \003(\005B\002\020\001\022\025\n\001i\030\t \001(\0132\n.demo.TestB" +
-      "\030\n\013sample.demoB\tProtoTest"
+      "\n\ntest.proto\022\004demo\"g\n\004Test\022\t\n\001a\030\001 \001(\005\022\r\n" +
+      "\001d\030\004 \001(\021:\00220\022\t\n\001e\030\005 \001(\007\022\t\n\001f\030\006 \001(\t\022\t\n\001g\030" +
+      "\007 \003(\005\022\r\n\001h\030\010 \003(\005B\002\020\001\022\025\n\001i\030\t \001(\0132\n.demo.T" +
+      "estB\030\n\013sample.demoB\tProtoTest"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -65,7 +65,7 @@ public abstract class AbstractMessageLite<
   public byte[] toByteArray() {
     try {
       final byte[] result = new byte[getSerializedSize()];
-      final CodedOutputStream output = CodedOutputStream.newInstance(result);
+      final CodedOutputStream output = CodedOutputStream.newInstance(result);//suo ArrayEncoderÀà
       writeTo(output);
       output.checkNoSpaceLeft();
       return result;

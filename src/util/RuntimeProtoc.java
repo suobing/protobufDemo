@@ -11,7 +11,7 @@ public class RuntimeProtoc {
 		// TODO Auto-generated method stub
 		String userdir = System.getProperty("user.dir");
 //		String currentDir= RuntimeProtoc.class.getResource("/").getPath();
-		String[] commands = {"cmd","/c","protoc.exe","-I="+userdir+"/proto","--java_out="+userdir+"/src/",userdir+"/proto/test.proto"};
+		String[] commands = {"cmd","/c","protoc.exe","-I="+userdir+"/proto","--java_out="+userdir+"/src/",userdir+"/proto/testEmbed.proto"};
 //		String[] commands = {"cmd","/c","protoc.exe","--java_out="+userdir+"/src/sample/demo/",userdir+"/proto/test.proto"};
 //		String commands = " protoc.exe"+" --java_out="+userdir+"/src/sample/demo/ "+userdir+"/proto/test.proto";
 		try {

@@ -726,7 +726,7 @@ public abstract class CodedOutputStream extends ByteOutput {
    * Compute the number of bytes that would be needed to encode a
    * {@code uint32} field.
    */
-  public static int computeUInt32SizeNoTag(final int value) {
+  public static int computeUInt32SizeNoTag(final int value) {//suo 计算以Varint存储需要的byte数
     if ((value & (~0 <<  7)) == 0) {
       return 1;
     }
@@ -930,7 +930,7 @@ public abstract class CodedOutputStream extends ByteOutput {
    */
   public static int encodeZigZag32(final int n) {
     // Note:  the right-shift must be arithmetic
-    return (n << 1) ^ (n >> 31);
+    return (n << 1) ^ (n >> 31);//suo 牛逼
   }
 
   /**
@@ -1319,7 +1319,7 @@ public abstract class CodedOutputStream extends ByteOutput {
     }
 
     @Override
-    public final void writeUInt32NoTag(int value) throws IOException {
+    public final void writeUInt32NoTag(int value) throws IOException {//suo 写Varint
       if (HAS_UNSAFE_ARRAY_OPERATIONS && spaceLeft() >= MAX_VARINT_SIZE) {
         long pos = ARRAY_BASE_OFFSET + position;
         while (true) {
@@ -1340,7 +1340,7 @@ public abstract class CodedOutputStream extends ByteOutput {
               buffer[position++] = (byte) value;
               return;
             } else {
-              buffer[position++] = (byte) ((value & 0x7F) | 0x80);
+              buffer[position++] = (byte) ((value & 0x7F) | 0x80);//suo 0x80是MSB位
               value >>>= 7;
             }
           }

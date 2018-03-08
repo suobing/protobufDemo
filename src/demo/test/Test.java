@@ -5,7 +5,6 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import sample.demo.ProtoDemo;
 import sample.demo.ProtoDemo.Student;
 import sample.demo.ProtoDemo.Student.PhoneNumber;
-
 public class Test {
 	
 	/**

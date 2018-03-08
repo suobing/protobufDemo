@@ -135,7 +135,7 @@ public abstract class AbstractParser<MessageType extends MessageLite>
       byte[] data, int off, int len, ExtensionRegistryLite extensionRegistry)
       throws InvalidProtocolBufferException {
     try {
-      CodedInputStream input = CodedInputStream.newInstance(data, off, len);
+      CodedInputStream input = CodedInputStream.newInstance(data, off, len);//suo ArrayDecoder¿‡–Õ
       MessageType message = parsePartialFrom(input, extensionRegistry);
       try {
         input.checkLastTagWas(0);
