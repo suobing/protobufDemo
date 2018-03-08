@@ -2,19 +2,19 @@ syntax= "proto2";
 package demo;
 
 option java_package = "sample.demo";
-option java_outer_classname = "TestContainer";
+option java_outer_classname = "TestEmbedContainer";
 
-//message InTest{
-//    optional int64 DealTime=1;
-//    optional string DealCode=2;
-//};
+message InTest{
+    optional int64 DealTime=1;
+    optional string DealCode=2;
+};
 
 message Test{
 	optional int32 a=1;
 	optional sint32 d=2 [default=20];
-	optional fixed32 e=3;
 	optional string f=4;
+	optional fixed32 e=3;
 	repeated int32 g=5;
 	repeated int32 h=6 [packed=true];
-//	repeated InTest iNtest=7;
+	repeated InTest iNtest=7;
 };
